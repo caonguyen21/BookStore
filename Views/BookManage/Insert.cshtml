@@ -1,0 +1,122 @@
+﻿@model BookStore.Models.Book
+@{
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+<!-- Toastr -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+@if (ViewBag.Message != null)
+{
+    <script>
+        toastr.success('@ViewBag.Message');
+    </script>
+}
+<!-- End Toastr -->
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Sách</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="javascript:history.go(-1)">Sách</a></li>
+                <li class="breadcrumb-item active">Thêm sách</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Thêm sách</h5>
+                        @using (Html.BeginForm("Insert", "BookManage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-group col-sm-2 col-form-label">
+                                <label>Tên sách</label>
+                                @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group col-sm-2 col-form-label">
+                                <label>Tác giả</label>
+                                @Html.DropDownListFor(m => m.AuthorId, (IEnumerable<SelectListItem>)ViewBag.Authors, "-- Chọn tác giả --", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.AuthorId, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group col-sm-2 col-form-label">
+                                <label>Nhà xuất bản</label>
+                                @Html.DropDownListFor(m => m.PublisherId, (IEnumerable<SelectListItem>)ViewBag.Publishers, "-- Chọn nhà xuất bản --", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.PublisherId, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group col-sm-2 col-form-label">
+                                <label>Nhà cung cấp</label>
+                                @Html.DropDownListFor(m => m.SupplierId, (IEnumerable<SelectListItem>)ViewBag.Suppliers, "-- Chọn nhà cung cấp --", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.SupplierId, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group col-sm-2 col-form-label">
+                                <label>Giá</label>
+                                @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group col-sm-2 col-form-label">
+                                <label>Số lượng</label>
+                                @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Quantity, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group col-sm-2 col-form-label">
+                                <label>Trạng thái</label>
+                                @Html.DropDownListFor(m => m.Status, new List<SelectListItem> { new SelectListItem { Text = "Available", Value = "Available" }, new SelectListItem { Text = "Not available", Value = "Not available" } }, "-- Chọn trạng thái --", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Status, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group col-sm-2 col-form-label">
+                                <label>Ảnh bìa</label>
+                                <input type="file" id="formFile" name="Image" class="form-control" onchange="previewImage(this);" />
+                                <span asp-validation-for="Image" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-sm-2 col-form-label">
+                                <img id="preview" alt="Preview Image" width="200" height="200" />
+                            </div>
+
+
+                            <br>
+                            <button type="submit" class="btn btn-primary">Thêm sách</button>
+                            <a class="btn btn-secondary" href="/BookManage/List">Quay lại</a>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+
+<script>
+    function previewImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#preview').attr('src', e.target.result);
+                $('#preview').show(); // Hiển thị ảnh khi có hình được chọn
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+<style>
+    #preview {
+        display: none;
+    }
+</style>
+

@@ -1,0 +1,57 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BookStore
+build_property.RootNamespace = BookStore
+build_property.ProjectDir = D:\BookStore\BookStore\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\BookStore\BookStore
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/BookStore/BookStore/Views/BookManage/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01hbmFnZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/BookManage/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01hbmFnZVxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/BookManage/Insert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01hbmFnZVxJbnNlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/BookManage/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01hbmFnZVxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/BookManage/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01hbmFnZVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/BookManage/UpdateImage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01hbmFnZVxVcGRhdGVJbWFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/Shared/_LayoutCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDdXN0b21lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-bsxbrypsql
+
+[D:/BookStore/BookStore/Views/Shared/_LayoutEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRFbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-37h1ypb8ox

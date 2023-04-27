@@ -1,0 +1,57 @@
+﻿@model BookStore.Models.Book
+
+@{
+    ViewData["Title"] = "UpdateImage";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+<!-- Toastr -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    toastr.options = {
+        "positionClass": "toast-top-center",
+</script>
+@if (TempData["SuccessMessage"] != null)
+{
+    <script>
+        toastr.success('@TempData["SuccessMessage"]')
+    </script>
+}
+<!-- End Toastr -->
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Chi tiết sách</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="javascript:history.go(-2)">Sách</a></li>
+                <li class="breadcrumb-item"><a href="javascript:history.go(-1)">@Model.Title</a></li>
+                <li class="breadcrumb-item active">Cập nhật ảnh</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cập nhật ảnh sách</h5>
+                        <form asp-action="UpdateImage" asp-route-id="@Model.BookId" method="post" enctype="multipart/form-data">
+                            <div class="form-group col-sm-2 col-form-label">
+                                <label for="image-input">Chọn ảnh:</label>
+                                <input id="image-input" type="file" name="image" class="form-control" accept="image/*" required>
+                                <span asp-validation-for="Image" class="text-danger"></span>
+                            </div>
+                            <br />
+                            <button type="submit" class="btn btn-primary">Cập nhật ảnh</button>
+                            <a asp-action="Update" asp-route-id="@Model.BookId" class="btn btn-secondary">Quay lại</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main><!-- End #main -->

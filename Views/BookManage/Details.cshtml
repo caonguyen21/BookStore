@@ -1,0 +1,77 @@
+﻿@model BookStore.Models.Book
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Sách</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="javascript:history.go(-1)">Sách</a></li>
+                <li class="breadcrumb-item active">@Model.Title</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Thông tin sách</h5>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 label">Tên sách:</div>
+                            <div class="col-lg-9 col-md-8">@Model.Title</div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <label class="col-lg-3 col-md-4 label">Tác giả:</label>
+                            <span class="col-lg-9 col-md-8">@Model.Author.Name</span>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <label class="col-lg-3 col-md-4 label">Nhà xuất bản:</label>
+                            <span class="col-lg-9 col-md-8">@Model.Publisher.Name</span>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <label class="col-lg-3 col-md-4 label">Nhà sản xuất:</label>
+                            <span class="col-lg-9 col-md-8">@Model.Supplier.Name</span>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <label class="col-lg-3 col-md-4 label">Giá:</label>
+                            <span class="col-lg-9 col-md-8">@Model.Price</span>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <label class="col-lg-3 col-md-4 label">Số lượng:</label>
+                            <span class="col-lg-9 col-md-8">@Model.Quantity</span>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <label class="col-lg-3 col-md-4 label">Trạng thái:</label>
+                            <span class="col-lg-9 col-md-8">@Model.Status</span>
+                        </div>
+                        <br />
+                        <div class="form-group col-sm-2 col-form-label">
+                            <label>Ảnh bìa:</label>
+                            <img src="@Url.Content("~/"+Model.Image)" alt="@Model.Title" width="200" height="200" />
+                        </div>
+
+                        <br />
+                        <div class="form-group col-sm-2 col-form-label">
+                            <a asp-action="List" class="btn btn-secondary">Quay lại</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
