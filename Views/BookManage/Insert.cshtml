@@ -74,7 +74,7 @@
 
                             <div class="form-group col-sm-2 col-form-label">
                                 <label>Trạng thái</label>
-                                @Html.DropDownListFor(m => m.Status, new List<SelectListItem> { new SelectListItem { Text = "Available", Value = "Available" }, new SelectListItem { Text = "Not available", Value = "Not available" } }, "-- Chọn trạng thái --", new { @class = "form-control" })
+                                @Html.DropDownListFor(m => m.Status, new List<SelectListItem> { new SelectListItem { Text = "Đã kích hoạt", Value = "Available" }, new SelectListItem { Text = "Chưa kích hoạt", Value = "Not available" } }, "-- Chọn trạng thái --", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.Status, "", new { @class = "text-danger" })
                             </div>
 
@@ -90,7 +90,7 @@
 
                             <br>
                             <button type="submit" class="btn btn-primary">Thêm sách</button>
-                            <a class="btn btn-secondary" href="/BookManage/List">Quay lại</a>
+                            <a asp-action="List" class="btn btn-secondary">Quay lại</a>
                         }
                     </div>
                 </div>

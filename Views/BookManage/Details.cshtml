@@ -56,7 +56,14 @@
                         <br />
                         <div class="row">
                             <label class="col-lg-3 col-md-4 label">Trạng thái:</label>
-                            <span class="col-lg-9 col-md-8">@Model.Status</span>
+                            @if (@Model.Status == "Not available")
+                            {
+                                <span class="col-lg-9 col-md-8">Chưa kích hoạt</span>
+                            }
+                            else if (@Model.Status == "Available")
+                            {
+                                <span class="col-lg-9 col-md-8">Đã kích hoạt</span>
+                            }
                         </div>
                         <br />
                         <div class="form-group col-sm-2 col-form-label">

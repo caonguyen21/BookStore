@@ -16,6 +16,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\BookStore\BookStore
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/BookStore/BookStore/Views/AuthorManage/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yTWFuYWdlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/AuthorManage/Insert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yTWFuYWdlXEluc2VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/AuthorManage/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yTWFuYWdlXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/AuthorManage/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yTWFuYWdlXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/BookStore/BookStore/Views/BookManage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01hbmFnZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/BookStore/BookStore/Views/BookManage/UpdateImage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01hbmFnZVxVcGRhdGVJbWFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BookStore/BookStore/Views/Shared/pages-error-404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHBhZ2VzLWVycm9yLTQwNC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/BookStore/BookStore/Views/_ViewImports.cshtml]

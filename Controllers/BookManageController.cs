@@ -118,7 +118,7 @@ namespace BookStore.Controllers
             Book book = db.Books.Find(id);
             if (book == null)
             {
-                return NotFound();
+                return View("pages-error-404");
             }
 
             FillAuthors();
@@ -135,7 +135,7 @@ namespace BookStore.Controllers
         {
             if (id != book.BookId)
             {
-                return NotFound();
+                return View("pages-error-404");
             }
 
             // Find the book in the database and attach it to the context
@@ -172,7 +172,7 @@ namespace BookStore.Controllers
             var book = db.Books.FirstOrDefault(b => b.BookId == id);
             if (book == null)
             {
-                return NotFound();
+                return View("pages-error-404");
             }
 
             return View(book);
@@ -186,7 +186,7 @@ namespace BookStore.Controllers
             var book = db.Books.FirstOrDefault(b => b.BookId == id);
             if (book == null)
             {
-                return NotFound();
+                return View("pages-error-404");
             }
 
             if (ModelState.IsValid)
@@ -210,7 +210,7 @@ namespace BookStore.Controllers
             return RedirectToAction("Update", new { id = book.BookId });
         }
 
-        //Update the image of the book
+        //Detail
         [HttpGet]
         public IActionResult Details(int id)
         {
@@ -222,7 +222,7 @@ namespace BookStore.Controllers
 
             if (book == null)
             {
-                return NotFound();
+                return View("pages-error-404");
             }
 
             return View(book);

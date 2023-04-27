@@ -1,18 +1,17 @@
-﻿@model IEnumerable<BookStore.Models.Book>
+﻿@model IEnumerable<BookStore.Models.Author>
 
 @{
     Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Sách</h1>
+        <h1>Tác giả</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-                <li class="breadcrumb-item active">Sách</li>
+                <li class="breadcrumb-item active">Tác giả</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -22,17 +21,14 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Quản lý sách</h5>
-                        <a asp-controller="BookManage" asp-action="Insert" class="linkbutton btn btn-primary">Thêm sách</a>
+                        <h5 class="card-title">Quản lý tác giả</h5>
+                        <a asp-controller="AuthorManage" asp-action="Insert" class="linkbutton btn btn-primary">Thêm tác giả</a>
                         <!-- Table with stripped rows -->
                         <table class="table datatable">
                             <thead>
                                 <tr>
-                                    <th scope="col">Mã sách</th>
-                                    <th scope="col">Tên sách</th>
-                                    <th scope="col">Ảnh bìa</th>
-                                    <th scope="col">Giá</th>
-                                    <th scope="col">Số lượng</th>
+                                    <th scope="col">Mã tác giả</th>
+                                    <th scope="col">Tên tác giả</th>
                                     <th scope="col">Trạng thái</th>
                                     <th scope="col"></th>
                                 </tr>
@@ -42,43 +38,32 @@
                                 {
                                     <tr>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.BookId)
+                                            @Html.DisplayFor(modelItem => item.AuthorId)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.Title)
+                                            @Html.DisplayFor(modelItem => item.Name)
                                         </td>
                                         <td>
-                                            <img src="@Url.Content("~/"+item.Image)" alt="Book cover" style="width: 100px; height: 100px;" />
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Price)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Quantity)
-                                        </td>
-                                        <td>
-                                            @if (item.Status == "Not available")
+                                            @if (item.Status == "Inactive")
                                             {
                                                 <div class="badge bg-danger">Chưa kích hoạt</div>
                                             }
-                                            else if (item.Status == "Available")
+                                            else if (item.Status == "Active")
                                             {
                                                 <div class="badge bg-success">Đã kích hoạt</div>
                                             }
                                         </td>
                                         <td>
-                                            <a asp-controller="BookManage" asp-action="Details" asp-route-id="@item.BookId" class="linkbutton btn btn-info">Chi tiết</a>
-                                            <a asp-controller="BookManage" asp-action="Update" asp-route-id="@item.BookId" class="linkbutton btn btn-warning">Sửa</a>
+                                            <a asp-controller="AuthorManage" asp-action="Details" asp-route-id="@item.AuthorId" class="linkbutton btn btn-info">Chi tiết</a>
+                                            <a asp-controller="AuthorManage" asp-action="Update" asp-route-id="@item.AuthorId" class="linkbutton btn btn-warning">Sửa</a>
                                         </td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->
-
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
