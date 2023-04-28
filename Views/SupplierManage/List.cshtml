@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BookStore.Models.Supplier>
+
+@{
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Nhà cung cấp</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                <li class="breadcrumb-item active">Nhà cung cấp</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Quản lý nhà cung cấp</h5>
+                        <a asp-controller="SupplierManage" asp-action="Insert" class="linkbutton btn btn-primary">Thêm nhà cung cấp</a>
+                        <!-- Table with stripped rows -->
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Mã nhà cung cấp</th>
+                                    <th scope="col">Tên nhà cung cấp</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SupplierId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+                                        <td>
+                                            @if (item.Status == "Inactive")
+                                            {
+                                                <div class="badge bg-danger">Chưa kích hoạt</div>
+                                            }
+                                            else if (item.Status == "Active")
+                                            {
+                                                <div class="badge bg-success">Đã kích hoạt</div>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a asp-controller="SupplierManage" asp-action="Details" asp-route-id="@item.SupplierId" class="linkbutton btn btn-info">Chi tiết</a>
+                                            <a asp-controller="SupplierManage" asp-action="Update" asp-route-id="@item.SupplierId" class="linkbutton btn btn-warning">Sửa</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

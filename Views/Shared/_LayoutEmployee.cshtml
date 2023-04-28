@@ -151,6 +151,42 @@
                 </ul>
             </li><!-- End Components Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-box-seam"></i><span>Nhà cung cấp</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="charts-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a asp-controller="SupplierManage" asp-action="List">
+                            <i class="bi bi-circle"></i><span>Danh sách nhà cung cấp</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="SupplierManage" asp-action="Insert">
+                            <i class="bi bi-circle"></i><span>Thêm nhà cung cấp</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-capslock"></i><span>Nhà xuất bản</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="tables-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a asp-controller="PublisherManage" asp-action="List">
+                            <i class="bi bi-circle"></i><span>Danh sách nhà xuất bản</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="PublisherManage" asp-action="Insert">
+                            <i class="bi bi-circle"></i><span>Thêm nhà xuất bản</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+
         </ul>
 
     </aside><!-- End Sidebar-->
